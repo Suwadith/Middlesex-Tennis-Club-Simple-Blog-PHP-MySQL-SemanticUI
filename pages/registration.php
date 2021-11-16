@@ -3,7 +3,7 @@
 require_once("../controllers/server_config.php");
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
+if (isset($_SESSION['username'])) {
     header("Location: ../pages/home.php");
 }
 ?>
@@ -13,38 +13,31 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
     <script
             src="../assets/js/jquery-3.1.1.min.js"></script>
     <script src="../assets/semantic/semantic.js"></script>
-</head>
 
 
-<style type="text/css">
-    body {
-        background-color: #DADADA;
-    }
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
 
-    body > .grid {
-        height: 100%;
-    }
+        body > .grid {
+            height: 100%;
+        }
+        body {
+            margin-top: 2%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
 
-    .image {
-        margin-top: -100px;
-    }
 
-    .column {
-        max-width: 450px;
-    }
+        .column {
+            max-width: 450px;
+        }
 
-    input:invalid {
-        border: 2px dashed red;
-    }
-
-    input:invalid:required {
-        background-image: linear-gradient(to right, pink, lightgreen);
-    }
-
-    input:valid {
-        border: 2px solid black;
-    }
-</style>
+        .menu {
+            margin-top: 0;
+        }
+    </style>
 <script>
     $(document)
         .ready(function () {
@@ -116,6 +109,26 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
 </script>
 </head>
 <body>
+
+<?php
+if (isset($_SESSION['username'])) { ?>
+    <div class="ui fluid five item menu">
+        <a class="item"><?php echo "Hi, " . $_SESSION['username'] . "!" ?></a>
+        <a class="item" href="home.php">Home</a>
+        <a class="item" href="players.php">Players</a>
+        <a class="item" href="about_us.php">About Us</a>
+        <a class="item" href="../controllers/logout.php">Logout</a>
+    </div>
+    <?php
+} else { ?>
+    <div class="ui fluid four item menu">
+        <a class="item" href="home.php">Home</a>
+        <a class="item" href="players.php">Players</a>
+        <a class="item" href="about_us.php">About Us</a>
+        <a class="item" href="login.php">Log-in/Sign-up</a>
+    </div>
+<?php }
+?>
 
 <div class="ui middle aligned center aligned grid">
     <div class="column">

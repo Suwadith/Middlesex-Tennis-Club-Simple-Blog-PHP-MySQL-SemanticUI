@@ -3,7 +3,7 @@
 require_once("../controllers/server_config.php");
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
+if (isset($_SESSION['username'])) {
     header("Location: ../pages/home.php");
 }
 ?>
@@ -13,7 +13,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
     <script
             src="../assets/js/jquery-3.1.1.min.js"></script>
     <script src="../assets/semantic/semantic.js"></script>
-</head>
 
 
 <style type="text/css">
@@ -24,13 +23,19 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
     body > .grid {
         height: 100%;
     }
-
-    .image {
-        margin-top: -100px;
+    body {
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
+
 
     .column {
         max-width: 450px;
+    }
+
+    .menu {
+        margin-top: 0;
     }
 </style>
 <script>
@@ -65,6 +70,26 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
 </script>
 </head>
 <body>
+
+<?php
+if (isset($_SESSION['username'])) { ?>
+    <div class="ui fluid five item menu">
+        <a class="item"><?php echo "Hi, " . $_SESSION['username'] . "!" ?></a>
+        <a class="item" href="home.php">Home</a>
+        <a class="item" href="players.php">Players</a>
+        <a class="item" href="about_us.php">About Us</a>
+        <a class="item" href="../controllers/logout.php">Logout</a>
+    </div>
+    <?php
+} else { ?>
+    <div class="ui fluid four item menu">
+        <a class="item" href="home.php">Home</a>
+        <a class="item" href="players.php">Players</a>
+        <a class="item" href="about_us.php">About Us</a>
+        <a class="item" href="login.php">Log-in/Sign-up</a>
+    </div>
+<?php }
+?>
 
 <div class="ui middle aligned center aligned grid">
     <div class="column">
