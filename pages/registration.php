@@ -3,7 +3,7 @@
 require_once("../controllers/server_config.php");
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['userid'])) {
+if (isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
     header("Location: ../pages/home.php");
 }
 ?>
@@ -121,7 +121,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['userid'])) {
     <div class="column">
         <h2 class="ui teal image header">
             <div class="content">
-                Registration
+                Sign-up
             </div>
         </h2>
 

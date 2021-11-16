@@ -12,6 +12,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 //    echo $username;
 
@@ -19,7 +20,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])
     $search_result = mysqli_query($db_con, $sql_search);
     if(mysqli_num_rows($search_result) == 0) {
         $sql_insert = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `username`, `password`) 
-                    VALUES ('$firstname', '$lastname', '$email', '$username', '$password')";
+                    VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password')";
 
         $insert_result = mysqli_query($db_con, $sql_insert);
         if($insert_result) {
