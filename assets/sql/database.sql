@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `user`
     `lastname`  VARCHAR(20)     NOT NULL,
     `username`  VARCHAR(16)     NOT NULL    UNIQUE,
     `password`  VARCHAR(255)    NOT NULL,
-    `email`     VARCHAR(64)     NOT NULL
+    `email`     VARCHAR(64)     NOT NULL    UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS `post`

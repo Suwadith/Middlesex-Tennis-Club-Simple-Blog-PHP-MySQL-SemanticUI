@@ -125,6 +125,20 @@ if (isset($_SESSION['username']) && isset($_SESSION['userid'])) {
             </div>
         </h2>
 
+        <?php
+
+        if(isset($_SESSION["success"]) && $_SESSION["success"]=true) {
+            echo '<p color="green">Account Created Successfully. <a href="login.php">Click here</a> to login!<p>';
+        } else if (isset($_SESSION["error_message"])) {
+            echo '<p color="red">'.$_SESSION["error_message"].'</p>';
+        } else if(isset($_SESSION["account_found"])) {
+            echo '<p color="red">'.$_SESSION["account_found"].'</p>';
+        }
+
+        unset($_SESSION["success"], $_SESSION["error_message"], $_SESSION["account_found"]);
+
+        ?>
+
         <form class="ui large form" action="../controllers/new_registration.php" method="post">
 
             <div class="ui stacked segment">
