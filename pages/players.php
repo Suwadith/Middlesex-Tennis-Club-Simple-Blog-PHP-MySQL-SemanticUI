@@ -3,9 +3,6 @@
 require_once("../controllers/server_config.php");
 session_start();
 
-//if (isset($_SESSION['username'])) {
-//    header("Location: ../pages/home.php");
-//}
 ?>
 
 <head>
@@ -67,7 +64,7 @@ $search_result = mysqli_query($db_con, $sql_player_search);;
     while($row = mysqli_fetch_array($search_result)) {?>
     <div class="column">
         <div class="ui segment">
-            <div class="ui centered card" onclick="location.href='player.php?<?php echo $row['player_id'] ?>'">
+            <div class="ui centered card" onclick="location.href='player.php?player=<?php echo $row['player_id'] ?>'">
                 <div class="image">
                     <img src="<?php echo $row['player_picture'] ?>">
                 </div>

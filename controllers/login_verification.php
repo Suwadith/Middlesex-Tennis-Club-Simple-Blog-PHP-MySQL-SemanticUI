@@ -18,6 +18,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $password_check = password_verify($password, $result_row['password']);
 
         if ($password_check) {
+            $_SESSION['user_id'] = $result_row['user_id'];
             $_SESSION['firstname'] = $result_row['firstname'];
             $_SESSION['lastname'] = $result_row['lastname'];
             $_SESSION['email'] = $result_row['email'];

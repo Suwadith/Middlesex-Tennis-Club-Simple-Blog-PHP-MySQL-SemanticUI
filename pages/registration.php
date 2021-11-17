@@ -62,6 +62,28 @@ if (isset($_SESSION['username'])) {
                                 }
                             ]
                         },
+                        dob: {
+                            identifier: 'dob',
+                            rules: [
+                                {
+                                    type: 'empty',
+                                    prompt: 'Please enter a valid date of birth'
+                                }
+                            ]
+                        },
+                        address: {
+                            identifier: 'address',
+                            rules: [
+                                {
+                                    type: 'empty',
+                                    prompt: 'Please enter a valid address'
+                                },
+                                {
+                                    type: 'length[10]',
+                                    prompt: 'Your address must be at least 10 characters'
+                                }
+                            ]
+                        },
                         email: {
                             identifier: 'email',
                             rules: [
@@ -160,6 +182,13 @@ if (isset($_SESSION['username'])) { ?>
                 </div>
                 <div class="field">
                     <input type="text" name="lastname" placeholder="Last Name" required>
+                </div>
+                <div class="field">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div class="field">
+                    <input type="text" name="address" placeholder="Address" required>
                 </div>
                 <div class="field">
                     <input type="text" name="email" placeholder="E-mail address" required>
