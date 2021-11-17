@@ -12,9 +12,11 @@ CREATE TABLE IF NOT EXISTS `post`
 (
     `post_id`   INT(20)     NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id`   INT(20)     NOT NULL,
+    `player_id` INT(20)     NOT NULL,
     `comment`   MEDIUMTEXT  NOT NULL,
     `timestamp` TIMESTAMP   NOT NULL,
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+    FOREIGN KEY (`user_id`)     REFERENCES `user`(`user_id`),
+    FOREIGN KEY (`player_id`)   REFERENCES `players`(`player_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `players`
