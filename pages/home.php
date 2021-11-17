@@ -30,9 +30,19 @@ session_start();
             margin-top: 0;
         }
 
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            padding-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
+
+<h1 class="ui center aligned header" style="padding-top: 20px; padding-bottom: 50px">Middlesex Tennis Club</h1>
 
 <?php
 if (isset($_SESSION['username'])) { ?>
@@ -54,6 +64,11 @@ if (isset($_SESSION['username'])) { ?>
 <?php }
 ?>
 
+<img class="center-image"
+     src="https://tigerturf.com/in/wp-content/uploads/2019/11/How-to-build-a-tennis-court-1440x1080.jpg">
 
+<p style="text-align: center"><b>A very warm welcome to Middlesex Tennis Club, founded on the 17th of November 2021.</b></p>
+<p style="text-align: center"><b>We are the second oldest Tennis Club in London, preceded only by Wimbledon.</b></p>
+<p style="text-align: center"><b>Our most famous club players can be seen under the Players section and by choosing any one of them, the registered users will have have the opportunity to make comments.</b></p>
 
 </body>

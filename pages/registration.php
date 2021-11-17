@@ -132,6 +132,8 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
 
+<h1 class="ui center aligned header" style="padding-top: 20px; padding-bottom: 50px">Middlesex Tennis Club</h1>
+
 <?php
 if (isset($_SESSION['username'])) { ?>
     <div class="ui fluid five item menu">
@@ -152,7 +154,7 @@ if (isset($_SESSION['username'])) { ?>
 <?php }
 ?>
 
-<div class="ui middle aligned center aligned grid">
+<div class="ui middle aligned center aligned grid" style="margin-top: -200px">
     <div class="column">
         <h2 class="ui teal image header">
             <div class="content">

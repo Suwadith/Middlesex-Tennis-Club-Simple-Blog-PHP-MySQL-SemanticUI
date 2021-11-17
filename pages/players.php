@@ -31,6 +31,8 @@ session_start();
 </head>
 <body>
 
+<h1 class="ui center aligned header" style="padding-top: 20px; padding-bottom: 50px">Middlesex Tennis Club</h1>
+
 <?php
 if (isset($_SESSION['username'])) { ?>
     <div class="ui fluid five item menu">
@@ -59,7 +61,7 @@ $search_result = mysqli_query($db_con, $sql_player_search);;
 //$result = mysqli_num_rows($search_result);
 
 ?>
-<div class="ui four column grid">
+<div class="ui four column grid" style="padding-top: 40px">
     <?php
     while($row = mysqli_fetch_array($search_result)) {?>
     <div class="column">

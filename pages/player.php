@@ -133,6 +133,8 @@ session_start();
 </head>
 <body>
 
+<h1 class="ui center aligned header" style="padding-top: 20px; padding-bottom: 50px">Middlesex Tennis Club</h1>
+
 <?php
 if (isset($_SESSION['username'])) { ?>
     <div class="ui fluid five item menu">
